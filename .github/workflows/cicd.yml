@@ -52,7 +52,7 @@ jobs:
     - name: Deploy Guestbook (스테이징 EC2)
       uses: appleboy/ssh-action@v1.0.0
       with:
-        host: 3.34.192.232
+        host: 3.38.102.36
         username: ec2-user
         key: ${{ secrets.STAGING_PRIVATE_KEY }}
         port: 22
@@ -62,7 +62,7 @@ jobs:
                            -d \
                            -p 38080:80 \
                            --name=guestbookapp \
-                           -e MYSQL_IP=3.38.169.46 \
+                           -e MYSQL_IP=3.38.102.36 \
                            -e MYSQL_PORT=3306 \
                            -e MYSQL_DATABASE=guestbook \
                            -e MYSQL_USER=root \
