@@ -1,5 +1,8 @@
 name: GuestBook CI/CD Pipeline
 
+env:
+  DOCKER_REPOSITORY: 0zeroxzero0/cicd_guestbook
+
 on:
   push:
 
@@ -27,8 +30,11 @@ jobs:
         name: Junit-Surefire_Report
         path: target/surefire-reports
         retention-days: 1
+    - name: Set Docker Image Tag
+      run: |
+        echo "DOCKER_IMAGE_TAG=$(date +%Y%m%d%H%M%S)_$GITHUB_RUN_NUMBER" >> $ GITHUB_ENV      
 
     - name: Docker Image Build
       run: |
-        docker image build --build-arg VERSION=1.1 --tag "0zeroxzero0/cicd_guestbook:1.1" .
+        docker image build --build-arg VERSION=$DOCKER_IMAGE_TAG --tag "$DOCKER_REPOSITORY:$DOCKER_IMAGE_TAG" .
         docker image ls | grep cicd_guestbook
