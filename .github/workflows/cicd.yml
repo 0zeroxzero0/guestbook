@@ -27,3 +27,8 @@ jobs:
         name: Junit-Surefire_Report
         path: target/surefire-reports
         retention-days: 1
+
+    - name: Docker Image Build
+      run: |
+        docker image build --build-arg VERSION=1.1 --tag "0zeroxzero0/cicd_guestbook:1.1" .
+        docker image ls | grep cicd_guestbook
