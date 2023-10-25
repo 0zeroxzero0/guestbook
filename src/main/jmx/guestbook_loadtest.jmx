@@ -201,11 +201,11 @@
       <hashTree/>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="TG_방명록메인" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="2085169985">
+          <collectionProp name="-1698570772">
             <stringProp name="53">5</stringProp>
             <stringProp name="0">0</stringProp>
             <stringProp name="1567">10</stringProp>
-            <stringProp name="48687">120</stringProp>
+            <stringProp name="1629">30</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
         </collectionProp>
